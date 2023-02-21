@@ -92,7 +92,6 @@ const GlobalStyles = styled.createGlobalStyle`
     vertical-align: baseline;
   }
 
-  // Display-role reset for older browsers.
   article,
   aside,
   details,
@@ -133,8 +132,8 @@ const GlobalStyles = styled.createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
-  // End of CSS reset.
 
+  // Global styles.
   :root {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
