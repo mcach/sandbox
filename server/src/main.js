@@ -1,5 +1,5 @@
 // Import libraries.
-import express from "express";
+const express = require("express");
 
 const PORT = 8000;
 
