@@ -1,5 +1,8 @@
-// Import libraries.
+// Require packages.
 const express = require("express");
+
+// Require routes.
+const { router } = require("./routes/people");
 
 const PORT = 8000;
 
@@ -10,6 +13,9 @@ app.use(express.json());
 
 // Requests for static files will look in public.
 app.use(express.static("public"));
+
+// Endpoints.
+app.use(router);
 
 app.get("*", (request, response) => {
   return response
