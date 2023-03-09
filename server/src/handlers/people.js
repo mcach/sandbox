@@ -19,7 +19,7 @@ const createPerson = (request, response) => {
 
   return response.status(201).json({
     status: 201,
-    data: newPerson,
+    data: { newPerson },
   });
 };
 
@@ -28,7 +28,7 @@ const deletePerson = (request, response) => {};
 
 // Get an array of people.
 const getPeople = (request, response) => {
-  return response.status(200).json({ status: 200, data: people });
+  return response.status(200).json({ status: 200, data: { people } });
 };
 
 // Update a person by id.
@@ -55,7 +55,9 @@ const updatePerson = (request, response) => {
   }
 
   people[foundIndex].language = language;
-  return response.status(200).json({ status: 200, data: people[foundIndex] });
+  return response
+    .status(200)
+    .json({ status: 200, data: { person: people[foundIndex] } });
 };
 
 module.exports = { createPerson, getPeople, updatePerson };
