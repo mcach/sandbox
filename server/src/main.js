@@ -17,4 +17,4 @@ app.get("*", (request, response) => {
     .json({ status: 404, message: "No endpoint found." });
 });
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => console.info(`Listening on port ${PORT}`));
