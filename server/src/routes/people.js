@@ -13,4 +13,4 @@ router.get("/api/people", getPeople);
 // Update a person by id.
 router.patch("/api/people/:id", updatePerson);
 
-module.exports = { router };
+module.exports = router;
