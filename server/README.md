@@ -15,58 +15,24 @@ Response will be in this structure:
 ```json
 {
   "status": 200,
-  "data": {
-    "people": [
-      {
-        "id": 1,
-        "name": "george",
-        "language": "javascript"
-      },
-      {
-        "id": 2,
-        "name": "elaine",
-        "language": "rust"
-      },
-      {
-        "id": 3,
-        "name": "jerry",
-        "language": "typescript"
-      }
-    ]
-  }
-}
-```
-
-### POST /api/people
-
-Create a new person in the data set.
-
-Expects a body with the following structure:
-
-```json
-{
-  "name": "<name of person>",
-  "language": "<programming language>"
-}
-```
-
-Response will be in this structure:
-
-```json
-{
-  "status": 201,
-  "message": "If a message is required it will be here.",
-  "data": {
-    "newPerson": {
-      "id": 4,
-      "name": "newman",
-      "language": "python"
+  "data": [
+    {
+      "id": 1,
+      "name": "george",
+      "language": "javascript"
+    },
+    {
+      "id": 2,
+      "name": "elaine",
+      "language": "rust"
     }
-  }
+  ]
 }
 ```
 
 ### PATCH /api/people/:id
+
+Update the language of a person in the data set.
 
 Expects a body with the following structure:
 
@@ -83,11 +49,15 @@ Response will be in this structure:
   "status": 200,
   "message": "If a message is required it will be here.",
   "data": {
-    "person": {
-      "id": 1,
-      "name": "george",
-      "language": "ruby"
-    }
+    "id": 1,
+    "name": "george",
+    "language": "ruby"
   }
 }
 ```
+
+### DELETE /api/people/:id
+
+Delete a person in the data set.
+
+The endpoint will respond with a code of 204, no body will be returned.
