@@ -2,15 +2,15 @@
 const router = require("express").Router();
 
 // Require handlers.
-const { createPerson, deletePerson, getPeople } = require("../handlers/people");
-
-// Create a new person.
-router.post("/api/people", createPerson);
+const { deletePerson, getPeople, updatePerson } = require("../handlers/people");
 
 // Get an array of people.
 router.get("/api/people", getPeople);
 
 // Delete a person by id.
 router.delete("/api/people/:id", deletePerson);
+
+// Update a person by id.
+router.patch("/api/people/:id", updatePerson);
 
 module.exports = router;

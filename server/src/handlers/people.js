@@ -1,5 +1,5 @@
 // Require data.
-const { people } = require("../../data");
+const people = require("../data/people.json");
 
 // TODO: Create a new person.
 const createPerson = (request, response) => {};
@@ -57,4 +57,4 @@ const updatePerson = (request, response) => {
     .json({ status: 200, data: { person: people[foundIndex] } });
 };
 
-module.exports = { createPerson, deletePerson, getPeople };
+module.exports = { deletePerson, getPeople, updatePerson };
