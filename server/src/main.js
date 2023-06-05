@@ -1,5 +1,8 @@
-// Import libraries.
+// Require packages.
 const express = require("express");
+
+// Require endpoint handlers.
+const { createPerson } = require("./handlers/people");
 
 const PORT = 8000;
 
@@ -10,6 +13,8 @@ app.use(express.json());
 
 // Requests for static files will look in public.
 app.use(express.static("public"));
+
+app.post("/api/people", createPerson);
 
 app.get("*", (request, response) => {
   return response
