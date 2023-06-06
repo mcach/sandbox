@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <Wrapper>
-      <Title>Please enter your credentials</Title>
+      <Title>Sign Up</Title>
       <Form onSubmit={handleSubmit}>
         <Input id="username" onChange={handleChange} placeholder="Username" />
         <Input
@@ -97,6 +97,7 @@ const Wrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  width: 600px;
 `;
 
 export default Home;
