@@ -1,39 +1,81 @@
 # Sandbox
 
-This project is a React application intended as a sandbox environment to test or demonstrate code.
+This project is a React application designed as an environment for testing and demonstrating code.
 
 ## Getting Started
 
-The following instructions will get the project up and running on your local machine.
+These instructions will help you set up and run the project on your local machine.
 
 ### Prerequisites
 
-You will need to install [Node.js](https://nodejs.org) to run the environment.
+Before you begin, ensure you have Node.js installed. If not, you can download and install it from [nodejs.org](https://nodejs.org).
 
 ### Installation
 
-Open a terminal in the project's directory and launch the server.
+1. Clone the repository to your local machine:
 
-```js
-cd server
-yarn install
-yarn dev
+   ```sh
+   git clone https://github.com/your-username/sandbox.git
+   ```
 
-// if using npm
-cd server
-npm install
-npm run dev
-```
+2. Navigate to the server directory:
 
-Open another terminal in the project's directory and launch the application.
+   ```sh
+   cd sandbox/server
+   ```
 
-```js
-cd client
-yarn install
-yarn dev
+3. Install server dependencies using Yarn:
 
-// if using npm
-cd client
-npm install
-npm run dev
-```
+   ```sh
+   yarn install
+   ```
+
+   If you prefer using npm:
+
+   ```sh
+   npm install
+   ```
+
+4. Start the server:
+
+   ```sh
+   yarn dev
+   ```
+
+   If you're using npm:
+
+   ```sh
+   npm run dev
+   ```
+
+5. Open another terminal and navigate to the client directory:
+
+   ```sh
+   cd sandbox/client
+   ```
+
+6. Install client dependencies using Yarn:
+
+   ```sh
+   yarn install
+   ```
+
+   If you prefer using npm:
+
+   ```sh
+   npm install
+   ```
+
+7. Start the client application:
+
+   ```sh
+   yarn dev
+   ```
+
+   If you're using npm:
+
+   ```sh
+   npm run dev
+   ```
+
+The project should now be up and running on your local machine. You can access it at [http://localhost:3000](http://localhost:3000) in your web browser.
