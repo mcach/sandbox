@@ -2,15 +2,17 @@
 
 Endpoints are grouped into the following categories:
 
-- **people** - relating to people in our data set
+- **people** - relating to data about individuals.
 
-## People Endpoints
+## People
 
 ### GET /api/people
 
-Get an array of people in the data set.
+Retrieve an array of people from the data set.
 
-Response will be in this structure:
+**Response:**
+
+- `200 OK`
 
 ```json
 {
@@ -32,9 +34,9 @@ Response will be in this structure:
 
 ### PATCH /api/people/:id
 
-Update the language of a person in the data set.
+Update the programming language of a person in the data set.
 
-Expects a body with the following structure:
+**Request Body:**
 
 ```json
 {
@@ -42,12 +44,14 @@ Expects a body with the following structure:
 }
 ```
 
-Response will be in this structure:
+**Response:**
+
+- `200 OK`
 
 ```json
 {
   "status": 200,
-  "message": "If a message is required it will be here.",
+  "message": "A message may be provided here if required.",
   "data": {
     "id": 1,
     "name": "george",
@@ -58,6 +62,8 @@ Response will be in this structure:
 
 ### DELETE /api/people/:id
 
-Delete a person in the data set.
+Delete a person from the data set.
 
-The endpoint will respond with a code of 204, no body will be returned.
+**Response:**
+
+- `204 No Content`
