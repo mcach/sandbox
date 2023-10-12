@@ -1,16 +1,15 @@
-// Require packages.
-const router = require("express").Router();
-
-// Require handlers.
 const { deletePerson, getPeople, updatePerson } = require("../handlers/people");
+const express = require("express");
 
-// Get an array of people.
+const router = express.Router();
+
+// Route to get an array of people.
 router.get("/api/people", getPeople);
 
-// Delete a person by id.
+// Route to delete a person by ID.
 router.delete("/api/people/:id", deletePerson);
 
-// Update a person by id.
+// Route to update a person by ID.
 router.patch("/api/people/:id", updatePerson);
 
 module.exports = router;

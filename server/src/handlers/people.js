@@ -1,17 +1,13 @@
-// Require data.
 const people = require("../data/people.json");
 
-// TODO: Create a new person.
-const createPerson = (request, response) => {};
+// TODO: Implement create person handler.
 
-// Delete a person by id.
+// Delete a person by ID.
 const deletePerson = (request, response) => {
   const { id } = request.params;
 
-  // Verify that the person with provided id exists.
-  const foundIndex = people.findIndex((person) => {
-    return person.id === Number(id);
-  });
+  // Find the index of the person with the provided ID.
+  const foundIndex = people.findIndex((person) => person.id === Number(id));
 
   if (foundIndex === -1) {
     return response
@@ -19,6 +15,7 @@ const deletePerson = (request, response) => {
       .json({ status: 404, message: "No person found.", data: { id } });
   }
 
+  // Remove the person from the array.
   people.splice(foundIndex, 1);
   return response.status(204).json();
 };
@@ -28,7 +25,7 @@ const getPeople = (request, response) => {
   return response.status(200).json({ status: 200, data: people });
 };
 
-// Update a person by id.
+// Update a person by ID.
 const updatePerson = (request, response) => {
   const { id } = request.params;
   const { language } = request.body;
@@ -40,10 +37,8 @@ const updatePerson = (request, response) => {
       .json({ status: 400, message: "Please provide a language." });
   }
 
-  // Verify that the person with provided id exists.
-  const foundIndex = people.findIndex((person) => {
-    return person.id === Number(id);
-  });
+  // Find the index of the person with the provided ID.
+  const foundIndex = people.findIndex((person) => person.id === Number(id));
 
   if (foundIndex === -1) {
     return response
@@ -51,6 +46,7 @@ const updatePerson = (request, response) => {
       .json({ status: 404, message: "No person found.", data: { id } });
   }
 
+  // Update the person's language.
   people[foundIndex].language = language;
   return response.status(200).json({ status: 200, data: people[foundIndex] });
 };
