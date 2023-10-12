@@ -1,4 +1,3 @@
-// Require packages.
 const express = require("express");
 
 // Require routes.
@@ -8,19 +7,20 @@ const PORT = 8000;
 
 const app = express();
 
-// Server will be expecting json-formatted data.
+// Middleware to parse JSON-formatted data
 app.use(express.json());
 
-// Requests for static files will look in public.
+// Serve static files from the "public" directory
 app.use(express.static("public"));
 
 // Endpoints.
 app.use(router);
 
-app.get("*", (request, response) => {
-  return response
-    .status(404)
-    .json({ status: 404, message: "No endpoint found." });
+// Define a catch-all route to handle 404 errors
+app.all("*", (request, response) => {
+  response.status(404).json({ status: 404, message: "No endpoint found." });
 });
 
-app.listen(PORT, () => console.info(`Listening on port ${PORT}`));
+app.listen(PORT, () => {
+  console.info(`Server is listening on port ${PORT}`);
+});
