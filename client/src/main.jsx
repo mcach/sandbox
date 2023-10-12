@@ -1,13 +1,10 @@
-// Import libraries.
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-// Import components.
 import App from "./components/App";
+import React from "react";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.querySelector("#root"));
+const root = document.querySelector("#root");
 
-root.render(
+ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
