@@ -1,4 +1,4 @@
-const express = require("express");
+const variableOne = 1;
 
 const PORT = 8000;
 
